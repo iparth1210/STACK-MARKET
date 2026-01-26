@@ -11,16 +11,26 @@ export interface Resource {
   type: 'video' | 'article' | 'book';
 }
 
+export interface VocabularyTerm {
+  word: string;
+  definition: string;
+}
+
 export interface SubTopic {
   title: string;
   explanation: string;
-  videoEmbedId?: string; // YouTube or Vimeo ID for explainer video
+  institutionalSecret?: string; // Pro-level knowledge (The "Pro" path)
+  vocabulary?: VocabularyTerm[]; // Built-in dictionary
+  funnyTake?: string;
+  videoEmbedId?: string;
+  whyThisMatters?: string; // Practical real-world implication
 }
 
 export interface Topic {
   id: string;
   title: string;
   description: string;
+  missionStrategy: string; // The "What to Learn" summary
   funnyTake: string;
   subTopics: SubTopic[];
   resources: Resource[];

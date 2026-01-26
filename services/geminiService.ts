@@ -1,13 +1,15 @@
 
 import { GoogleGenAI, Type } from "@google/genai";
 
-const API_KEY = process.env.API_KEY;
+// SDK Guidelines: Create a new GoogleGenAI instance right before making an API call 
+// to ensure it always uses the most up-to-date API key from the environment.
 
 export const askOracle = async (topic: string, question: string) => {
-  if (!API_KEY) return "The Oracle is currently sleeping (Missing API Key).";
+  if (!process.env.API_KEY) return "The Oracle is currently sleeping (Missing API Key).";
   
-  const ai = new GoogleGenAI({ apiKey: API_KEY });
-  const model = 'gemini-3-flash-preview';
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  // Use gemini-2.5-flash-lite-latest for low-latency responses
+  const model = 'gemini-2.5-flash-lite-latest';
 
   try {
     const response = await ai.models.generateContent({
@@ -32,9 +34,41 @@ export const askOracle = async (topic: string, question: string) => {
   }
 };
 
+export const analyzeVideo = async (videoBase64: string, mimeType: string) => {
+  if (!process.env.API_KEY) return "Intelligence system offline (Missing API Key).";
+  
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  // Use gemini-3-pro-preview for high-quality video understanding
+  const model = 'gemini-3-pro-preview';
+
+  try {
+    const response = await ai.models.generateContent({
+      model,
+      contents: {
+        parts: [
+          {
+            inlineData: {
+              data: videoBase64,
+              mimeType: mimeType,
+            },
+          },
+          {
+            text: "Act as a high-level financial intelligence officer. Analyze this video and extract the 'Alpha' (key hidden information, market sentiment, and actionable insights). Present it in a punchy, professional, and slightly cynical tone. Use bullet points for key takeaways.",
+          },
+        ],
+      },
+    });
+
+    return response.text || "No actionable intel found in this broadcast.";
+  } catch (error) {
+    console.error("Video Analysis Error:", error);
+    return "Error decoding the video stream. The signal might be jammed by the SEC.";
+  }
+};
+
 export const getQuickQuiz = async (topic: string) => {
-  if (!API_KEY) return null;
-  const ai = new GoogleGenAI({ apiKey: API_KEY });
+  if (!process.env.API_KEY) return null;
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   const model = 'gemini-3-flash-preview';
 
   try {
@@ -60,7 +94,7 @@ export const getQuickQuiz = async (topic: string) => {
       }
     });
 
-    return JSON.parse(response.text);
+    return JSON.parse(response.text.trim());
   } catch (error) {
     console.error("Quiz Error:", error);
     return null;
@@ -68,15 +102,14 @@ export const getQuickQuiz = async (topic: string) => {
 };
 
 export const getStockFundamentals = async (symbol: string = "NVDA") => {
-  if (!API_KEY) return null;
-  // Use Pro model for search grounding to get real-time accurate data
-  const ai = new GoogleGenAI({ apiKey: API_KEY });
+  if (!process.env.API_KEY) return null;
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   
   try {
     const response = await ai.models.generateContent({
       model: 'gemini-3-pro-preview',
-      contents: `Find the latest stock fundamentals for ${symbol}. 
-      I need: Market Cap, P/E Ratio, Dividend Yield, and 52-week High/Low.
+      contents: `Find the absolute latest stock fundamentals for ${symbol}. 
+      I need: Market Cap, P/E Ratio, Dividend Yield, 52-week High/Low, Debt-to-Equity Ratio, ROE (Return on Equity), and current Analyst Consensus (Buy/Hold/Sell).
       Format the output as a clean JSON object.`,
       config: {
         tools: [{ googleSearch: {} }],
@@ -91,14 +124,24 @@ export const getStockFundamentals = async (symbol: string = "NVDA") => {
             dividendYield: { type: Type.STRING },
             fiftyTwoWeekHigh: { type: Type.STRING },
             fiftyTwoWeekLow: { type: Type.STRING },
-            summary: { type: Type.STRING, description: "A 1-sentence funny take on this stock's current state." }
+            debtToEquity: { type: Type.STRING },
+            roe: { type: Type.STRING },
+            analystConsensus: { type: Type.STRING },
+            summary: { type: Type.STRING, description: "A 1-sentence funny take on this stock's current institutional standing." }
           },
-          required: ["symbol", "companyName", "marketCap", "peRatio", "dividendYield", "fiftyTwoWeekHigh", "fiftyTwoWeekLow", "summary"]
+          required: [
+            "symbol", "companyName", "marketCap", "peRatio", "dividendYield", 
+            "fiftyTwoWeekHigh", "fiftyTwoWeekLow", "debtToEquity", "roe", 
+            "analystConsensus", "summary"
+          ]
         }
       }
     });
 
-    return JSON.parse(response.text);
+    return {
+      data: JSON.parse(response.text.trim()),
+      sources: response.candidates?.[0]?.groundingMetadata?.groundingChunks || []
+    };
   } catch (error) {
     console.error("Fundamentals Fetch Error:", error);
     return null;

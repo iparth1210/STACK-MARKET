@@ -4,42 +4,63 @@ import { Level, LevelStatus } from './types';
 export const CURRICULUM: Level[] = [
   {
     id: 1,
-    name: "Level 1: The Foundation",
-    tagline: "Fixing your brain before you fix your wallet.",
+    name: "PHASE 0: THE GENESIS",
+    tagline: "From Bartering Goats to Digital Gold.",
     status: LevelStatus.AVAILABLE,
-    icon: "🧱",
+    icon: "📜",
     topics: [
       {
-        id: "t1-1",
-        title: "Psychology of Money",
-        description: "Why you buy things you don't need with money you don't have.",
-        funnyTake: "Your brain is a caveman that thinks a 'Sale' sign is a successful hunt. Spoiler: You're the one being hunted.",
+        id: "t0-1",
+        title: "What is a Market?",
+        description: "The 'Who, What, Why' of global exchange. Understanding the core concept of trade.",
+        missionStrategy: "Deconstruct the market into its simplest form. Learn why markets exist, who controls them, and why they are the heartbeat of civilization.",
+        funnyTake: "A market is just a giant group chat where everyone is arguing over what a piece of paper is worth. We're here to win the argument.",
         subTopics: [
-          { title: "The Dopamine Loop", explanation: "That high you feel when clicking 'Buy Now' lasts 4 minutes. The credit card bill lasts 4 years.", videoEmbedId: "D8C7796uM_0" },
-          { title: "Lifestyle Creep", explanation: "When you get a raise, your car suddenly looks older. If you upgrade your life every time you upgrade your pay, you'll be 'rich broke' forever.", videoEmbedId: "N5WIs79_t2E" },
-          { title: "Loss Aversion", explanation: "Losing $100 hurts twice as much as finding $100 feels good. This makes you panic-sell stocks at the bottom.", videoEmbedId: "mO2P2h-fX5c" }
+          {
+            title: "Why Do Markets Exist?",
+            explanation: "Markets solve the 'Double Coincidence of Wants.' Instead of trading a goat for a chair, we use money as a medium to trade anything with anyone.",
+            institutionalSecret: "Institutions view markets as 'Liquidity Pools.' They don't just trade value; they trade the ability to enter and exit positions without moving the price.",
+            vocabulary: [
+              { word: "Liquidity", definition: "How easily an asset can be turned into cash without affecting its market price." },
+              { word: "Double Coincidence of Wants", definition: "An economic phenomenon where two parties each hold an item the other wants." }
+            ],
+            videoEmbedId: "fS8S4Y4qGxw"
+          },
+          {
+            title: "Who Runs the Show?",
+            explanation: "Retail traders (you), Institutional giants (Banks/Hedge Funds), and Market Makers (the house) all fight for a slice of the pie.",
+            institutionalSecret: "Market Makers make money on the 'Spread'—the difference between the buy and sell price. They win regardless of which way the market goes.",
+            vocabulary: [
+              { word: "Bid-Ask Spread", definition: "The difference between the highest price a buyer will pay and the lowest price a seller will accept." },
+              { word: "Market Maker", definition: "A firm that stands ready to buy and sell a particular stock on a regular basis." }
+            ],
+            videoEmbedId: "Z7p8_z_Lh_g"
+          }
         ],
         resources: [
-          { title: "Psychology of Money (Summary)", url: "https://www.collabfund.com/blog/the-psychology-of-money/", type: "article" },
-          { title: "The Marshmallow Test", url: "https://www.youtube.com/watch?v=QX_oy9614HQ", type: "video" },
-          { title: "Nudge: Improving Decisions", url: "https://www.amazon.com/Nudge-Improving-Decisions-Health-Happiness/dp/014311526X", type: "book" }
+          { title: "Brief History of Markets", url: "https://www.investopedia.com/articles/07/stock-exchange-history.asp", type: "article" }
         ],
         isQuizCompleted: false
       },
       {
-        id: "t1-2",
-        title: "The Ultimate Budget",
-        description: "Give every single dollar a job to do.",
-        funnyTake: "A budget isn't a cage. It's a map. Without it, you're just wandering in the woods with a wallet full of meat.",
+        id: "t1-1",
+        title: "Dopamine & Debt",
+        description: "Psychological warfare: Why your brain is programmed to stay broke.",
+        missionStrategy: "Identify the 'Consumer OS' and replace it with the 'Investor OS'. Learn how marketing triggers impulsive spending via dopamine loops.",
+        funnyTake: "Your brain is a lab rat addicted to clicking 'Buy Now'. We're here to kill the rat and hire a CEO.",
         subTopics: [
-          { title: "The 50/30/20 Rule", explanation: "50% Needs, 30% Wants, 20% Savings. It's the 'I want a life but also don't want to be homeless' plan.", videoEmbedId: "Y8E_O2mQpWw" },
-          { title: "Zero-Based Budgeting", explanation: "Income - Outgo = Zero. Every dollar is assigned a task before the month starts.", videoEmbedId: "vB-S3OInO88" },
-          { title: "Sinking Funds", explanation: "Saving for things you KNOW are coming (Xmas, Tires, Vacations) so they aren't 'surprises'.", videoEmbedId: "B75_v3X6lms" }
+          { 
+            title: "The Neuro-Marketing Trap", 
+            explanation: "Companies use red buttons and 'limited time' timers to bypass your logic and hit your dopamine receptors.", 
+            institutionalSecret: "The 'VIX' or Fear Index measures how panicked the crowd is. Institutions buy when your dopamine is low and your fear is high.",
+            vocabulary: [
+              { word: "VIX", definition: "A ticker symbol for the CBOE Volatility Index, a popular measure of the stock market's expectation of volatility." }
+            ],
+            videoEmbedId: "D8C7796uM_0" 
+          }
         ],
         resources: [
-          { title: "YNAB Method", url: "https://www.ynab.com/the-four-rules", type: "article" },
-          { title: "EveryDollar App", url: "https://www.ramseysolutions.com/ramseyplus/everydollar", type: "article" },
-          { title: "Budgeting 101 Guide", url: "https://www.nerdwallet.com/article/finance/how-to-budget", type: "article" }
+          { title: "Psychology of Money", url: "https://www.youtube.com/watch?v=R0S_Lp7hI0k", type: "video" }
         ],
         isQuizCompleted: false
       }
@@ -47,103 +68,188 @@ export const CURRICULUM: Level[] = [
   },
   {
     id: 2,
-    name: "Level 2: Banking & Buffers",
-    tagline: "Turning your bank account into a fortress.",
+    name: "PHASE 1: THE EQUITY CASINO",
+    tagline: "Own the means of production.",
     status: LevelStatus.AVAILABLE,
-    icon: "🏰",
+    icon: "📈",
     topics: [
       {
-        id: "t2-1",
-        title: "The Interest Machine",
-        description: "How banks make money off your ignorance.",
-        funnyTake: "Traditional banks pay you 0.01% interest. They're basically charging you for the privilege of letting them lend your money to your neighbor for 24%.",
+        id: "t4-1",
+        title: "The Equity Game",
+        description: "Moving from working for money to owning the machines that make money.",
+        missionStrategy: "Learn how to value a company. We look at the 'Wh' of analysis: What does it make? Where is it going? How does it survive?",
+        funnyTake: "Stop buying the shoes, buy the company that makes the shoes. Let everyone else pay YOU for their dopamine hits.",
         subTopics: [
-          { title: "High-Yield Savings (HYSA)", explanation: "The absolute minimum effort way to make money. If you're at a big bank, move your savings to an online bank today.", videoEmbedId: "XU0K92D7fEc" },
-          { title: "Compound Interest", explanation: "The 8th wonder of the world. Time is your greatest asset. Starting at 20 vs 30 is a multi-million dollar difference.", videoEmbedId: "wf91baAL27M" },
-          { title: "Emergency Funds", explanation: "3-6 months of expenses. It's not an investment; it's a 'Keep the Lights On' insurance policy.", videoEmbedId: "HhX5P9T4bU4" }
+          { 
+            title: "Fundamental Analysis: The 'How'", 
+            explanation: "To truly understand a company, you must master the 'Big Three' statements:\n\n1. THE BALANCE SHEET (A Snapshot of Wealth): Shows what a company OWNS (Assets) vs what it OWES (Liabilities). Formula: Assets = Liabilities + Shareholders' Equity. Example: If a tech giant has $100B in cash but $80B in debt, they only 'really' have $20B.\n\n2. THE INCOME STATEMENT (The Performance Review): Tracks Revenue minus Expenses over time. It ends with 'Net Income' (the bottom line). If Revenue is growing but Net Income is shrinking, the company is getting inefficient.\n\n3. THE CASH FLOW STATEMENT (The Truth Detector): Profits on paper can be faked, but cash is king. This tracks cash coming in from Ops, going out for Investing, and moving via Financing. A company with high 'Net Income' but negative 'Operating Cash Flow' is often cooking the books.", 
+            whyThisMatters: "If you don't know what a company actually owns and earns, you're just gambling. Knowing the numbers helps you spot a bargain before everyone else does.",
+            institutionalSecret: "Top hedge funds now use Large Language Models (LLMs) and custom AI to ingest 500-page 10-K filings in seconds. These AI agents don't just read the numbers; they perform 'Sentiment Scouring' on the management's tone during earnings calls to detect hidden anxiety or deception that a human might miss.",
+            vocabulary: [
+              { word: "P/E Ratio", definition: "Price-to-Earnings ratio. How much you pay for every dollar of profit." },
+              { word: "EPS", definition: "Earnings Per Share. A portion of a company's profit allocated to each outstanding share." },
+              { word: "10-K", definition: "A comprehensive annual report filed by public companies with the SEC, containing a detailed summary of financial performance." }
+            ],
+            videoEmbedId: "1kvknZoU--M" 
+          },
+          {
+            title: "Market Mechanics: Where is the Price?",
+            explanation: "Price isn't a fixed number; it's the result of the 'Limit Order Book'—a list of everyone wanting to buy and sell. High-Frequency Trading (HFT) algorithms scan this book thousands of times per second, looking to exploit millisecond gaps between buyers and sellers. When you click 'Buy', these bots often 'front-run' you, changing the price before your finger even leaves the mouse.",
+            whyThisMatters: "Ever wonder why the price jumps $0.05 the exact microsecond you try to buy? That's HFT bots eating your lunch. Using 'Limit Orders' instead of 'Market Orders' is your only defense against these high-speed digital pickpockets.",
+            funnyTake: "The market is like a massive high-speed auction where the auctioneer is a robot on espresso and you're still trying to find your paddle.",
+            institutionalSecret: "The 'real' big trades don't happen on public charts. Big banks use 'Dark Pools'—private exchanges where they trade millions of shares without showing up in the public order book. They do this to hide their tracks so they don't crash the price before they're done selling.",
+            vocabulary: [
+              { word: "Limit Order", definition: "An order to buy or sell a stock at a specific price or better." },
+              { word: "Dark Pool", definition: "Private exchanges for trading securities that are not accessible to the investing public, allowing institutions to trade large blocks without moving the market." },
+              { word: "HFT", definition: "High-Frequency Trading. Algorithmic trading characterized by high speeds, high turnover rates, and high order-to-trade ratios." }
+            ],
+            videoEmbedId: "_8_v-I-t9mQ"
+          },
+          {
+            title: "Understanding Market Cycles",
+            explanation: "Markets move in waves. The 'Boom' is driven by greed and easy money, while the 'Bust' is driven by fear and liquidation. Knowing where you are in the cycle prevents you from buying the 'Top'.",
+            whyThisMatters: "Markets have seasons just like the weather. Buying in a 'boom' is like buying a winter coat in July—you're likely paying way too much. Knowing the cycle saves your skin.",
+            institutionalSecret: "Big players use the 'Wyckoff Theory' to identify accumulation and distribution phases. They buy when everyone is crying and sell when everyone is celebrating.",
+            funnyTake: "Buying at the top of a boom is like being the last person at a party when the cops show up. You're left holding the bill.",
+            vocabulary: [
+              { word: "Bull Market", definition: "A period where stock prices are rising or are expected to rise." },
+              { word: "Bear Market", definition: "A period where stock prices are falling and widespread pessimism causes the negative sentiment to be self-sustaining." }
+            ],
+            videoEmbedId: "wf91baAL27M"
+          },
+          {
+            title: "Behavioral Finance: The Mind Games",
+            explanation: "Your brain is a legacy system designed for running away from lions, not trading tech stocks. Biases like 'Confirmation Bias' (only reading what you agree with) and 'Herding' (doing what the crowd does) are the primary reasons retail traders lose money.",
+            whyThisMatters: "Understanding your own mental glitches is the ultimate 'hack'. If you know you're prone to panic-selling just because everyone else is, you can build systems to stop yourself from being your own worst enemy.",
+            funnyTake: "Following the herd is great if you're a sheep. It's terrible if you're an investor, because sheep usually end up as dinner.",
+            institutionalSecret: "Hedge funds use 'Sentiment Analysis' bots to track exactly how panicked or greedy you are on social media. They trade against your emotions.",
+            vocabulary: [
+              { word: "Confirmation Bias", definition: "The tendency to search for, interpret, favor, and recall information in a way that confirms one's prior beliefs." },
+              { word: "Herding", definition: "When investors follow what they perceive other investors are doing, rather than their own analysis." }
+            ],
+            videoEmbedId: "fT8M1xHwT6k"
+          },
+          {
+            title: "Introduction to Options Trading",
+            explanation: "Options are financial contracts that give you the right, but not the obligation, to buy or sell an asset at a set price within a specific timeframe. A 'Call' is a bet that the price will go UP, while a 'Put' is a bet that the price will go DOWN. Basic strategies include 'Buying Calls' for profit or 'Covered Calls' to generate income from stocks you already own.",
+            whyThisMatters: "Options allow you to control 100 shares of a stock for a fraction of the cost of buying them outright. They are the ultimate tool for leverage and hedging.",
+            funnyTake: "Options are like paying for the right to buy a pizza at yesterday's price. If the price of pizza doubles, you're a genius. If it drops, you just lost your pizza coupon fee.",
+            institutionalSecret: "Professional 'Theta Gang' traders make money by selling options that are likely to expire worthless. They aren't betting on price; they are betting on the passage of time (Time Decay). They are the house, and retail 'Option Buyers' are the gamblers.",
+            vocabulary: [
+              { word: "Call", definition: "An option contract that gives the holder the right to buy an asset." },
+              { word: "Put", definition: "An option contract that gives the holder the right to sell an asset." },
+              { word: "Strike Price", definition: "The specific price at which an option holder can buy or sell the underlying asset." },
+              { word: "Premium", definition: "The price paid to acquire an option contract." }
+            ],
+            videoEmbedId: "7PM4rNDr4NI"
+          }
         ],
         resources: [
-          { title: "Best HYSA Rates", url: "https://www.bankrate.com/banking/savings/best-high-yield-interests-rates/", type: "article" },
-          { title: "Compound Interest Calculator", url: "https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator", type: "article" }
+          { title: "Stock Market for Beginners", url: "https://www.youtube.com/watch?v=n7O7uS_Y6Lw", type: "video" },
+          { title: "Guide to Behavioral Finance", url: "https://www.investopedia.com/behavioral-finance-4687178", type: "article" },
+          { title: "Options Trading 101", url: "https://www.investopedia.com/options-trading-strategy-and-education-center-4427786", type: "article" }
         ],
+        isQuizCompleted: false
+      },
+      {
+        id: "t4-2",
+        title: "Dividends & Cashflow",
+        description: "Getting paid to wait. The ultimate passive income stream.",
+        missionStrategy: "Identify companies that share their success. Learn how to build a portfolio that pays your rent without you lifting a finger.",
+        funnyTake: "Dividends are like a 'thank you' note from a company, but the note is made of actual money.",
+        subTopics: [
+          {
+            title: "Yield Chasing vs. Growth",
+            explanation: "A high dividend yield can be a 'trap' if the company is dying. Look for 'Dividend Aristocrats'.",
+            institutionalSecret: "The 'Dividend Payout Ratio' tells us if the company is over-extending. If they pay out 100% of profits, they can't grow.",
+            vocabulary: [
+              { word: "Dividend Yield", definition: "Annual dividends per share divided by the share price." },
+              { word: "Payout Ratio", definition: "The proportion of earnings paid out as dividends to shareholders." }
+            ],
+            videoEmbedId: "f5j9v9uK_rk"
+          }
+        ],
+        resources: [{ title: "DRIP Investing", url: "https://www.investopedia.com/terms/d/drip.asp", type: "article" }],
         isQuizCompleted: false
       }
     ]
   },
   {
     id: 3,
-    name: "Level 3: Debt Destruction",
-    tagline: "Murdering high interest before it murders you.",
+    name: "PHASE 2: TECHNICAL WARFARE",
+    tagline: "Reading the psychology of the crowd through charts.",
     status: LevelStatus.AVAILABLE,
-    icon: "💣",
+    icon: "🕯️",
     topics: [
       {
-        id: "t3-1",
-        title: "Credit Score Sorcery",
-        description: "Decoding the 3 digits that rule your life.",
-        funnyTake: "Your credit score is the world's way of asking: 'If I give you a sandwich, will you give it back or eat it and run?'",
+        id: "t5-0",
+        title: "Reading the Tape",
+        description: "Technical Analysis (TA): Why 'When' you buy is as important as 'What' you buy.",
+        missionStrategy: "Interpret price action and volume. Charts are just a map of human greed and fear.",
+        funnyTake: "If the chart looks like a rollercoaster that just fell off the tracks, maybe don't get on.",
         subTopics: [
-          { title: "The 30% Utilization Rule", explanation: "Using 90% of your limit makes you look desperate. Keep it under 30% to look like a pro.", videoEmbedId: "j63n3M8YFuo" },
-          { title: "Payment History", explanation: "The #1 factor. One late payment can haunt you for 7 years like a bad ex.", videoEmbedId: "L9Y19q-9M2Q" },
-          { title: "Credit Mix", explanation: "Having a credit card, a car loan, and a mortgage shows you can handle different types of debt.", videoEmbedId: "GjQ3yYV67v4" }
+          {
+            title: "The 'When': Market Timing",
+            explanation: "We use 'Support' and 'Resistance' to find entry points. Support is where buyers step in; Resistance is where sellers take over.",
+            institutionalSecret: "Algos place 'Stop Loss' orders just below support. Institutions then drive the price down to hit those stops and buy your cheap shares.",
+            vocabulary: [
+              { word: "Resistance", definition: "A price level where a stock historically has difficulty rising above." },
+              { word: "RSI", definition: "Relative Strength Index. Tells you if a stock is overbought or oversold." }
+            ],
+            videoEmbedId: "gMAtV0Nf-f0"
+          },
+          {
+            title: "Volume: The Confirmation",
+            explanation: "Price movement without volume is a lie. High volume confirms that a move is real and sustainable.",
+            institutionalSecret: "Volume 'Spikes' usually signify an institutional 'Whale' entering or exiting the water.",
+            vocabulary: [
+              { word: "Volume Profile", definition: "An advanced charting study that displays trading activity over a specified time period at specified price levels." }
+            ],
+            videoEmbedId: "8fL-I4L2Kgs"
+          }
         ],
-        resources: [
-          { title: "MyFICO Education", url: "https://www.myfico.com/credit-education", type: "article" },
-          { title: "Free Annual Credit Report", url: "https://www.annualcreditreport.com/", type: "article" }
-        ],
-        isQuizCompleted: false
-      },
-      {
-        id: "t3-2",
-        title: "The Debt War",
-        description: "Snowball vs Avalanche: Pick your weapon.",
-        funnyTake: "Paying off debt is like fighting a dragon. You can either cut off its small toes first (Snowball) or aim for the fire-breathing head (Avalanche).",
-        subTopics: [
-          { title: "Debt Snowball", explanation: "Pay smallest balance first to build momentum and dopamine.", videoEmbedId: "vB-S3OInO88" },
-          { title: "Debt Avalanche", explanation: "Pay highest interest first to save the most money mathematically.", videoEmbedId: "Y8E_O2mQpWw" }
-        ],
-        resources: [
-          { title: "Undebt.it Calculator", url: "https://undebt.it/", type: "article" }
-        ],
+        resources: [{ title: "TA for Beginners", url: "https://www.youtube.com/watch?v=fM5Zre7mX_I", type: "video" }],
         isQuizCompleted: false
       }
     ]
   },
   {
     id: 4,
-    name: "Level 4: Stock Market Engine",
-    tagline: "Owning the greatest wealth machine in history.",
+    name: "PHASE 3: THE GLOBAL MACHINE",
+    tagline: "The Fed, Interest Rates, and Macro Cycles.",
     status: LevelStatus.AVAILABLE,
-    icon: "📈",
+    icon: "🌍",
     topics: [
       {
-        id: "t4-1",
-        title: "Stocks: The Equity Game",
-        description: "Thinking like an owner, not just a consumer.",
-        funnyTake: "If you spend $1000 on an iPhone, you have a phone. If you spend $1000 on Apple stock, you own a piece of the factory. Be the factory.",
+        id: "t6-1",
+        title: "The DJ of the World: The Fed",
+        description: "How interest rates control the temperature of the global economy.",
+        missionStrategy: "Understand the 'Macro' environment. If interest rates go up, assets go down. If rates go down, everything pumps.",
+        funnyTake: "The Federal Reserve is the DJ of the economy. If they turn down the volume (raise rates), the party stops.",
         subTopics: [
-          { title: "Tech Titan Showdown", explanation: "Comparing NVIDIA, Apple, and Microsoft. Why fundamentals matter more than hype.", videoEmbedId: "1kvknZoU--M" },
-          { title: "Dividends & Payouts", explanation: "How big tech companies return cash to you for just holding their stock.", videoEmbedId: "u_m9zG6A618" },
-          { title: "P/E Ratios", explanation: "Price to Earnings. It tells you if a stock is 'Expensive' or 'On Sale'.", videoEmbedId: "u57tM0_H96s" }
+          {
+            title: "Inflation: The Hidden Tax",
+            explanation: "Inflation is when your money buys less over time. It's caused by printing too much currency or supply shocks.",
+            institutionalSecret: "Hedge funds use 'TIPS' (Treasury Inflation-Protected Securities) to ensure their wealth doesn't evaporate while they sleep.",
+            vocabulary: [
+              { word: "CPI", definition: "Consumer Price Index. The main tool for measuring inflation." },
+              { word: "Quantitative Easing", definition: "When the central bank buys securities to increase the money supply." }
+            ],
+            videoEmbedId: "pS-LOnK0Q28"
+          },
+          {
+            title: "The Big Cycle",
+            explanation: "Economies breathe in and out. There is a short cycle (8-10 years) and a long cycle (75-100 years).",
+            institutionalSecret: "Ray Dalio's 'Holy Grail' of investing is diversifying into 15-20 uncorrelated return streams to survive the 'Deleveraging' phase.",
+            vocabulary: [
+              { word: "Recession", definition: "Two consecutive quarters of declining GDP." },
+              { word: "Deleveraging", definition: "The reduction of the leverage ratio, or the percentage of debt in a balance sheet." }
+            ],
+            videoEmbedId: "PHe0bXAIuk0"
+          }
         ],
         resources: [
-          { title: "NVDA vs AAPL vs MSFT Deep Dive", url: "https://www.youtube.com/watch?v=1kvknZoU--M", type: "video" },
-          { title: "Investopedia Stock Basics", url: "https://www.investopedia.com/stocks-4427785", type: "article" },
-          { title: "Yahoo Finance Market Data", url: "https://finance.yahoo.com/", type: "article" }
-        ],
-        isQuizCompleted: false
-      },
-      {
-        id: "t4-2",
-        title: "Index Funds & ETFs",
-        description: "Why picking one stock is for suckers.",
-        funnyTake: "Don't try to find the needle in the haystack. Just buy the whole haystack and take every needle that's inside.",
-        subTopics: [
-          { title: "S&P 500 Deep Dive", explanation: "Owning the 500 biggest companies in America. The most reliable wealth builder.", videoEmbedId: "Y8E_O2mQpWw" },
-          { title: "Expense Ratios", explanation: "The hidden fee that can steal 30% of your future wealth. Keep it low!", videoEmbedId: "D8C7796uM_0" }
-        ],
-        resources: [
-          { title: "Bogleheads Wiki", url: "https://www.bogleheads.org/", type: "article" }
+          { title: "Economic Machine Works", url: "https://www.youtube.com/watch?v=PHe0bXAIuk0", type: "video" }
         ],
         isQuizCompleted: false
       }
@@ -151,35 +257,31 @@ export const CURRICULUM: Level[] = [
   },
   {
     id: 5,
-    name: "Level 5: Real Estate Empire",
-    tagline: "Making money from things you can kick.",
+    name: "PHASE 4: DIGITAL SOVEREIGNTY",
+    tagline: "Crypto, Blockchain, and the 24/7 Market.",
     status: LevelStatus.AVAILABLE,
-    icon: "🏠",
+    icon: "₿",
     topics: [
       {
         id: "t5-1",
-        title: "Rent vs Buy",
-        description: "Is your house an investment or a place to sleep?",
-        funnyTake: "A house is a giant piggy bank that you have to pay to fix when the plumbing explodes at 3 AM.",
+        title: "Bitcoin: Hard Money",
+        description: "Why the world is shifting toward un-printable, digital gold.",
+        missionStrategy: "Learn the difference between 'Currency' (unlimited) and 'Money' (scarce). Understand the 'Halving' cycle.",
+        funnyTake: "Bitcoin is like gold, but you can send it across the world in an email and the government can't stop it.",
         subTopics: [
-          { title: "Amortization", explanation: "How your mortgage works and why you pay interest for the first 10 years.", videoEmbedId: "wf91baAL27M" },
-          { title: "Equity Growth", explanation: "How owning a home builds wealth over decades through forced savings.", videoEmbedId: "HhX5P9T4bU4" }
+          { 
+            title: "The 21 Million Limit", 
+            explanation: "There will only ever be 21 million Bitcoins. This absolute scarcity is what gives it value against infinite fiat.", 
+            institutionalSecret: "BlackRock and Fidelity have launched ETFs because they know their clients want 'Asymmetric Upside'.",
+            vocabulary: [
+              { word: "Satoshi", definition: "The smallest unit of Bitcoin (0.00000001 BTC)." },
+              { word: "Halving", definition: "An event where the reward for mining Bitcoin is cut in half, happening every 4 years." }
+            ],
+            videoEmbedId: "yubzJw0uiE4" 
+          }
         ],
         resources: [
-          { title: "NYT Rent vs Buy Calculator", url: "https://www.nytimes.com/interactive/2014/upshot/buy-rent-calculator.html", type: "article" }
-        ],
-        isQuizCompleted: false
-      },
-      {
-        id: "t5-2",
-        title: "House Hacking",
-        description: "Living for free while your neighbors pay you.",
-        funnyTake: "Buy a duplex, live in one half, rent the other. Congratulations, you're now a landlord and a tenant at the same time.",
-        subTopics: [
-          { title: "The 1% Rule", explanation: "Does the rent cover the mortgage? A simple rule for real estate investors.", videoEmbedId: "u_m9zG6A618" }
-        ],
-        resources: [
-          { title: "BiggerPockets Guide", url: "https://www.biggerpockets.com/", type: "article" }
+          { title: "Bitcoin Whitepaper", url: "https://bitcoin.org/bitcoin.pdf", type: "article" }
         ],
         isQuizCompleted: false
       }
@@ -187,154 +289,31 @@ export const CURRICULUM: Level[] = [
   },
   {
     id: 6,
-    name: "Level 6: The Tax Matrix",
-    tagline: "Legally keeping what you earn.",
+    name: "PHASE 5: THE EXIT STRATEGY",
+    tagline: "Tax Hacking and Wealth Defense.",
     status: LevelStatus.AVAILABLE,
-    icon: "⚖️",
-    topics: [
-      {
-        id: "t6-1",
-        title: "Tax Brackets Decoded",
-        description: "How not to fear earning more money.",
-        funnyTake: "Earning more money NEVER makes you take home less. Marginal tax rates mean you only pay more on the extra dollars.",
-        subTopics: [
-          { title: "Marginal Rates", explanation: "Understanding that your first $12k is taxed at 0%, and only the top dollars hit higher brackets.", videoEmbedId: "XU0K92D7fEc" }
-        ],
-        resources: [
-          { title: "IRS Tax Brackets 2024", url: "https://taxfoundation.org/data/all/federal/2024-tax-brackets/", type: "article" }
-        ],
-        isQuizCompleted: false
-      }
-    ]
-  },
-  {
-    id: 7,
-    name: "Level 7: Retirement Sprint",
-    tagline: "Setting up your 80-year-old self for a yacht.",
-    status: LevelStatus.AVAILABLE,
-    icon: "🍹",
-    topics: [
-      {
-        id: "t7-1",
-        title: "Roth vs Traditional",
-        description: "The two best tax gifts from the government.",
-        funnyTake: "Roth IRA is 'Pay tax now, never pay again'. Traditional is 'Save tax now, pay when you're old'. Pick your poison.",
-        subTopics: [
-          { title: "401k Match", explanation: "It is a 100% instant return on your money. If you don't take it, you're literally burning cash.", videoEmbedId: "HhX5P9T4bU4" }
-        ],
-        resources: [
-          { title: "Vanguard Retirement Plans", url: "https://investor.vanguard.com/retirement/iras", type: "article" }
-        ],
-        isQuizCompleted: false
-      }
-    ]
-  },
-  {
-    id: 8,
-    name: "Level 8: Alternative Chaos",
-    tagline: "Crypto, Gold, and Magic Beans.",
-    status: LevelStatus.AVAILABLE,
-    icon: "💎",
+    icon: "🏰",
     topics: [
       {
         id: "t8-1",
-        title: "Crypto & Blockchain",
-        description: "Digital gold or digital trash?",
-        funnyTake: "Bitcoin is like gold you can email. Dogecoin is like a joke that got out of hand. Use with extreme caution.",
+        title: "Stay Wealthy: Taxes",
+        description: "Taxes are your biggest expense. Learn how the rich pay almost zero.",
+        missionStrategy: "Understand 'Long Term Capital Gains' vs 'Short Term'. Learn about 'Cost Basis' and 'Step-ups'.",
+        funnyTake: "Taxes are the only game where the rules are written in a secret language and the prize for losing is your house.",
         subTopics: [
-          { title: "Volatility", explanation: "Why crypto can go up 1000% and down 99% in the same week.", videoEmbedId: "XQ9O2S88sQk" },
-          { title: "Cold Storage", explanation: "Keeping your digital keys on a physical device so hackers can't touch them.", videoEmbedId: "u57tM0_H96s" }
+          { 
+            title: "The 1031 Real Estate Hack", 
+            explanation: "You can sell a property and buy another one without paying taxes. It's called 'Deferring'.", 
+            institutionalSecret: "The ultra-wealthy use 'Buy, Borrow, Die'. They buy assets, borrow against them for cash, and never sell to avoid taxes forever.",
+            vocabulary: [
+              { word: "Capital Gains", definition: "Profit from the sale of an asset." },
+              { word: "Tax Deferral", definition: "Postponing payment of taxes to a future date." }
+            ],
+            videoEmbedId: "9o4vR_Ff-30" 
+          }
         ],
         resources: [
-          { title: "Coinbase Learning Hub", url: "https://www.coinbase.com/learn", type: "article" }
-        ],
-        isQuizCompleted: false
-      }
-    ]
-  },
-  {
-    id: 9,
-    name: "Level 9: Estate Legacy",
-    tagline: "Don't let the government play with your toys.",
-    status: LevelStatus.AVAILABLE,
-    icon: "👑",
-    topics: [
-      {
-        id: "t9-1",
-        title: "Wills & Trusts",
-        description: "Ensuring your money goes where you want after you're gone.",
-        funnyTake: "If you don't have a will, the state decides who gets your stuff. They might give your Ferrari to your annoying cousin Steve.",
-        subTopics: [
-          { title: "Living Trusts", explanation: "Avoiding probate court so your heirs get their money immediately and privately.", videoEmbedId: "j63n3M8YFuo" }
-        ],
-        resources: [
-          { title: "Estate Planning 101", url: "https://www.fidelity.com/life-events/estate-planning/overview", type: "article" }
-        ],
-        isQuizCompleted: false
-      }
-    ]
-  },
-  {
-    id: 10,
-    name: "Level 10: FIRE Independence",
-    tagline: "Quitting the rat race forever.",
-    status: LevelStatus.AVAILABLE,
-    icon: "🔥",
-    topics: [
-      {
-        id: "t10-1",
-        title: "The 4% Rule",
-        description: "The mathematical formula for early retirement.",
-        funnyTake: "If you have 25 times your annual expenses invested, you are technically a free human. You can tell your boss 'no' in 15 different languages.",
-        subTopics: [
-          { title: "Withdrawal Rates", explanation: "How much you can take out of your portfolio without it ever running out.", videoEmbedId: "Y8E_O2mQpWw" }
-        ],
-        resources: [
-          { title: "Mr. Money Mustache", url: "https://www.mrmoneymustache.com/", type: "article" }
-        ],
-        isQuizCompleted: false
-      }
-    ]
-  },
-  {
-    id: 11,
-    name: "Level 11: Scaling Income",
-    tagline: "Side hustles and business building.",
-    status: LevelStatus.AVAILABLE,
-    icon: "🚀",
-    topics: [
-      {
-        id: "t11-1",
-        title: "The Side Hustle",
-        description: "Trading time for more than just a paycheck.",
-        funnyTake: "A side hustle is how you buy your way to freedom faster. It's like doing extra credit, but the reward is a beach in Bali.",
-        subTopics: [
-          { title: "Active vs Passive", explanation: "Uber is active. A blog is passive. One needs your hands, the other needs your brain once.", videoEmbedId: "D8C7796uM_0" }
-        ],
-        resources: [
-          { title: "Side Hustle Nation", url: "https://www.sidehustlenation.com/", type: "article" }
-        ],
-        isQuizCompleted: false
-      }
-    ]
-  },
-  {
-    id: 12,
-    name: "Level 12: Economics & Inflation",
-    tagline: "Understanding the world's giant machine.",
-    status: LevelStatus.AVAILABLE,
-    icon: "🌍",
-    topics: [
-      {
-        id: "t12-1",
-        title: "Inflation: The Silent Thief",
-        description: "Why $100 today buys fewer tacos than it did in 1990.",
-        funnyTake: "Inflation is the thief that lives in your bank account. It doesn't steal your dollars, it steals what those dollars can buy.",
-        subTopics: [
-          { title: "Purchasing Power", explanation: "How to protect your wealth from the melting iceberg of fiat currency.", videoEmbedId: "mO2P2h-fX5c" }
-        ],
-        resources: [
-          { title: "Consumer Price Index Data", url: "https://www.bls.gov/cpi/", type: "article" }
+          { title: "Tax Free Wealth Summary", url: "https://www.youtube.com/watch?v=9_7fQ0v_Kiw", type: "video" }
         ],
         isQuizCompleted: false
       }
