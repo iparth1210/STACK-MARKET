@@ -1,85 +1,92 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FINANCE FRENZY: THE ENDGAME</title>
+    <title>SOVEREIGN TERMINAL | INSTITUTIONAL INTERFACE</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@300;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- KaTeX for high-end formula rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
     <style>
       :root {
-        --neon-blue: #0ea5e9;
-        --neon-pink: #f472b6;
-        --neon-green: #22c55e;
-        --glass: rgba(15, 23, 42, 0.8);
+        --primary: #E5E7EB; /* Brushed Platinum */
+        --accent: #D4AF37;  /* Sovereign Gold */
+        --bg: #050A10;      /* Deep Obsidian */
+        --card: rgba(10, 20, 30, 0.7);
+        --border: rgba(212, 175, 55, 0.2);
+        --text-platinum: #E5E7EB;
       }
+
+      * { box-sizing: border-box; }
+
       body {
-        font-family: 'Space Grotesk', sans-serif;
-        background-color: #020617;
-        color: #e2e8f0;
-        overflow-x: hidden;
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg);
+        color: var(--text-platinum);
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        letter-spacing: -0.015em;
+        background-image: 
+          radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+          radial-gradient(circle at 0% 100%, rgba(30, 60, 90, 0.1) 0%, transparent 50%);
       }
-      .font-bungee { font-family: 'Bungee', cursive; }
+
+      h1, h2, h3, h4, .font-display {
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: -0.04em;
+        font-weight: 700;
+        line-height: 1.1;
+      }
+
+      .glass-terminal {
+        background: rgba(10, 15, 25, 0.85);
+        backdrop-filter: blur(40px) saturate(180%);
+        border: 1px solid var(--border);
+        box-shadow: 0 12px 64px 0 rgba(0, 0, 0, 0.9);
+      }
+
+      .gold-hairline {
+        border: 1px solid rgba(212, 175, 55, 0.35);
+      }
+
+      .hover-institutional {
+        transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .hover-institutional:hover {
+        transform: translateY(-6px);
+        border-color: rgba(212, 175, 55, 0.7);
+        background: rgba(212, 175, 55, 0.1);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.75), 0 0 40px rgba(212, 175, 55, 0.15);
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar { width: 4px; }
+      ::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); }
+      ::-webkit-scrollbar-thumb { background: rgba(212, 175, 55, 0.4); border-radius: 20px; }
+      ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
       .font-mono { font-family: 'JetBrains Mono', monospace; }
-      
-      /* Animated Cyber Background */
-      body::before {
-        content: '';
-        position: fixed;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background: 
-          radial-gradient(circle at 20% 30%, rgba(14, 165, 233, 0.05) 0%, transparent 50%),
-          radial-gradient(circle at 80% 70%, rgba(244, 114, 182, 0.05) 0%, transparent 50%);
-        z-index: -1;
-      }
 
-      .glass-card {
-        background: var(--glass);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
-      }
-
-      .neon-border {
-        box-shadow: 0 0 15px rgba(14, 165, 233, 0.2);
-        border: 1px solid var(--neon-blue);
-      }
-
-      .level-node {
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      }
-      .level-node:hover {
-        transform: scale(1.1) rotate(5deg);
-        filter: brightness(1.2);
-      }
-
-      @keyframes scanline {
-        0% { transform: translateY(-100%); }
-        100% { transform: translateY(100%); }
-      }
-      .scanline {
-        position: fixed;
-        top: 0; left: 0; width: 100%; height: 10px;
-        background: linear-gradient(to bottom, transparent, rgba(14, 165, 233, 0.03), transparent);
-        animation: scanline 8s linear infinite;
-        pointer-events: none;
-        z-index: 100;
+      .shimmer-gold {
+        background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.15), transparent);
+        background-size: 200% 100%;
+        animation: shimmer 6s infinite linear;
       }
 
       @keyframes shimmer {
         0% { background-position: -200% 0; }
         100% { background-position: 200% 0; }
       }
-      .shimmer {
-        background: linear-gradient(90deg, #0f172a 25%, #1e293b 50%, #0f172a 75%);
-        background-size: 200% 100%;
-        animation: shimmer 1.5s infinite linear;
-      }
 
-      ::-webkit-scrollbar { width: 4px; }
-      ::-webkit-scrollbar-track { background: #020617; }
-      ::-webkit-scrollbar-thumb { background: var(--neon-blue); border-radius: 10px; }
+      .katex { font-size: 1.1em; color: var(--accent); white-space: nowrap; }
+      
+      /* Fix for quirks mode error if injected in nested frames */
+      .standards-check { display: none; }
     </style>
     <script type="importmap">
     {
@@ -87,13 +94,13 @@
         "react/": "https://esm.sh/react@^19.2.3/",
         "react": "https://esm.sh/react@^19.2.3",
         "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-        "@google/genai": "https://esm.sh/@google/genai@^1.38.0"
+        "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+        "framer-motion": "https://esm.sh/framer-motion@^11.11.17"
       }
     }
     </script>
   </head>
   <body>
-    <div class="scanline"></div>
     <div id="root"></div>
   </body>
 </html>
